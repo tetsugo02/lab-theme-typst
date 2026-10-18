@@ -1,0 +1,13 @@
+[package]
+name = "lab-theme"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["tetsugo"]
+license = "LicenseRef-Proprietary"
+description = "Lab presentation themes for Typst, reproducing the lab PowerPoint template."
+compiler = "0.13.0"
+exclude = ["examples", "scripts"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
