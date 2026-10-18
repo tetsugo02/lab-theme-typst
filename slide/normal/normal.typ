@@ -232,6 +232,13 @@
     show: setting
     body
   }
+  // List bullets hang 28pt left of the text, more than Touying's 1em column
+  // gutter, so columns get a wider gap.
+  let composer = if composer == auto or type(composer) in (array, int) {
+    components.side-by-side.with(columns: composer, gutter: 2em)
+  } else {
+    composer
+  }
   touying-slide(self: self, config: config, repeat: repeat, setting: new-setting, composer: composer, ..bodies)
 })
 

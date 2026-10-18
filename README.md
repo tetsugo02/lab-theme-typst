@@ -94,6 +94,29 @@ git clone <this repository> ~/workspace/lab-theme-typst
 
 色は `lab-colors.accent1` などで参照できます（`#alert` は `accent2` の赤）。
 
+## サンプル
+
+- `examples/slide-normal-talk.typ`: 研究発表の例（全レイアウト・数式・表・図・アニメーション）
+- `examples/slide-normal-layouts.typ`: PowerPoint テンプレートとの見た目比較用
+
+リポジトリ内でコンパイルするときはルートを指定します。
+
+```sh
+typst compile --root . examples/slide-normal-talk.typ
+```
+
+### PowerPoint への変換（typ2pptx）
+
+[typ2pptx](https://github.com/tetsugo02/typ2pptx) で変換するときは `--font-size-scale 1.0`
+を付けると、テンプレートと同じ 13.333×7.5 インチ・同じ文字サイズになります。
+
+```sh
+typ2pptx examples/slide-normal-talk.typ --root . --font-size-scale 1.0 -o talk.pptx
+```
+
+ただし typ2pptx はフォント名を引き継がない（欧文は Arial、一部は Consolas になる）ため、
+フォントは PowerPoint 側で置き換える必要があります。
+
 ## テーマの追加
 
 新しい種類は名前空間として追加します。
